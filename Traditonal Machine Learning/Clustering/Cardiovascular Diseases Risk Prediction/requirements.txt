@@ -1,8 +1,8 @@
+joblib==1.0.1
 streamlit
 openai
 llama-index==0.10.4
 nltk
 httpx
 pypdf
-joblib==1.0.1
-load
+
