@@ -1,4 +1,4 @@
-joblib==1.0.1
+joblib-load==1.0.1
 streamlit
 openai
 llama-index==0.10.4
