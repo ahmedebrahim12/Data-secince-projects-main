@@ -5,3 +5,4 @@ nltk
 httpx
 pypdf
 joblib==1.0.1
+load
