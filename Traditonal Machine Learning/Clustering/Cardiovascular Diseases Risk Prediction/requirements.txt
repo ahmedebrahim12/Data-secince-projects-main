@@ -4,5 +4,4 @@ llama-index==0.10.4
 nltk
 httpx
 pypdf
-Collecting joblib==1.0.1
-Downloading joblib-1.0.1-py3-none-any.whl (303 kB)
+joblib==1.0.1
