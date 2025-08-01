@@ -78,7 +78,10 @@ mappings = {
 # response = requests.get(url)
 # mappings = response.json()
 
-df_final = pd.read_csv('labeled_data.csv')
+# df_final = pd.read_csv('labeled_data.csv')
+
+url = "https://drive.google.com/uc?id=1fIcdNBYa85OlYZhpsIjnEcbcOc6BmqtX"
+df_final = pd.read_csv(url)
 
 x_cluster=df_final.drop(['Heart_Disease', 'Diabetes', 'Other_Cancer','Skin_Cancer', 'Arthritis', 'Depression','cluster','Height_(cm)','Weight_(kg)'],axis=1)
 
