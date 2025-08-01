@@ -49,13 +49,13 @@ def load_model_and_scaler():
 
 rf_model, scaler, label_encoders = load_model_and_scaler()
 
-# with open("https://github.com/ahmedebrahim12/Data-secince-projects-main/blob/main/Traditonal_Machine_Learning/Clustering/Cardiovascular_Diseases_Risk_Prediction/to/mappings.json", "r") as f:
-#     mappings = json.load(f)
+with open("/mappings.json", "r") as f:
+    mappings = json.load(f)
 
 
-url = "https://raw.githubusercontent.com/ahmedebrahim12/Data-secince-projects-main/main/Traditonal_Machine_Learning/Clustering/Cardiovascular_Diseases_Risk_Prediction/to/mappings.json"
-response = requests.get(url)
-mappings = response.json()
+# url = "https://raw.githubusercontent.com/ahmedebrahim12/Data-secince-projects-main/main/Traditonal_Machine_Learning/Clustering/Cardiovascular_Diseases_Risk_Prediction/to/mappings.json"
+# response = requests.get(url)
+# mappings = response.json()
 
 df_final = pd.read_csv('labeled_data.csv')
 
