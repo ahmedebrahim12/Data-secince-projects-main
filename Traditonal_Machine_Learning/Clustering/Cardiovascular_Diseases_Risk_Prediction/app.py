@@ -4,14 +4,28 @@ import numpy as np
 from joblib import load
 import json
 import plotly.graph_objects as go
+import gdown
+import os
+
 
 # Load the pre-trained components
 @st.cache_resource
 def load_model_and_scaler():
-    model = load(r"random_forest_cluster.pkl")
+    # model = load(r"random_forest_cluster.pkl")
     scaler = load(r"scaler.pkl")
     label_encoders = load(r"label_encoders.pkl")
     return model, scaler, label_encoders
+
+def download_model():
+    url = "https://drive.google.com/uc?id=1SN3RcdPWE3Omu65wtNk-OboEbYMjNyCc"
+    output = "random_forest_cluster.pkl"
+    if not os.path.exists(output):
+        gdown.download(url, output, quiet=False)
+
+download_model()
+
+# ثم بعد التنزيل
+model = load("random_forest_cluster.pkl")
 
 rf_model, scaler, label_encoders = load_model_and_scaler()
 
