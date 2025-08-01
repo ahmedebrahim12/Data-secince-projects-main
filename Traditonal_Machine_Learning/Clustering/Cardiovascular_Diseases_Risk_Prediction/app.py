@@ -49,8 +49,29 @@ def load_model_and_scaler():
 
 rf_model, scaler, label_encoders = load_model_and_scaler()
 
-with open("/mappings.json", "r") as f:
-    mappings = json.load(f)
+# with open("/mappings.json", "r") as f:
+#     mappings = json.load(f)
+
+mappings = {
+    "General_Health": {
+        "Poor": 0, "Fair": 1, "Good": 2, "Very Good": 3, "Excellent": 4
+    },
+    "Checkup": {
+        "Within the past year": 4, "Within the past 2 years": 3,
+        "Within the past 5 years": 2, "5 or more years ago": 1, "Never": 0
+    },
+    "Age_Category": {
+        "18-24": 0, "25-29": 1, "30-34": 2, "35-39": 3, "40-44": 4,
+        "45-49": 5, "50-54": 6, "55-59": 7, "60-64": 8, "65-69": 9,
+        "70-74": 10, "75-79": 11, "80+": 12
+    },
+    "Diabetes": {
+        "No": 0,
+        "No, pre-diabetes or borderline diabetes": 1,
+        "Yes, but female told only during pregnancy": 1,
+        "Yes": 2
+    }
+}
 
 
 # url = "https://raw.githubusercontent.com/ahmedebrahim12/Data-secince-projects-main/main/Traditonal_Machine_Learning/Clustering/Cardiovascular_Diseases_Risk_Prediction/to/mappings.json"
