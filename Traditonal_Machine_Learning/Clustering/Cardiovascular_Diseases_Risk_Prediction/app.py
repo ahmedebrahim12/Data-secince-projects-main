@@ -10,22 +10,40 @@ import os
 
 # Load the pre-trained components
 @st.cache_resource
+# def load_model_and_scaler():
+#     # model = load(r"random_forest_cluster.pkl")
+#     scaler = load(r"scaler.pkl")
+#     label_encoders = load(r"label_encoders.pkl")
+#     return model, scaler, label_encoders
+
+# def download_model():
+#     url = "https://drive.google.com/uc?id=1SN3RcdPWE3Omu65wtNk-OboEbYMjNyCc"
+#     output = "random_forest_cluster.pkl"
+#     if not os.path.exists(output):
+#         gdown.download(url, output, quiet=False)
+
+# download_model()
+
+def download_if_missing(file_path, gdrive_id):
+    if not os.path.exists(file_path):
+        url = f"https://drive.google.com/uc?id={gdrive_id}"
+        gdown.download(url, file_path, quiet=False)
+
 def load_model_and_scaler():
-    # model = load(r"random_forest_cluster.pkl")
-    scaler = load(r"scaler.pkl")
-    label_encoders = load(r"label_encoders.pkl")
+    # تحميل الملفات إذا كانت غير موجودة
+    download_if_missing("random_forest_cluster.pkl", "1SN3RcdPWE3Omu65wtNk-OboEbYMjNyCc")
+    download_if_missing("scaler.pkl", "1Wkm1Txux4uZ0KcC4IFFwQByFilinfWYQ")
+    download_if_missing("label_encoders.pkl", "1_W_XAFFBAr5vP6X4sDLaiwb6FwjKGsxm")
+
+    # تحميل المحتويات
+    model = load("random_forest_cluster.pkl")
+    scaler = load("scaler.pkl")
+    label_encoders = load("label_encoders.pkl")
+
     return model, scaler, label_encoders
 
-def download_model():
-    url = "https://drive.google.com/uc?id=1SN3RcdPWE3Omu65wtNk-OboEbYMjNyCc"
-    output = "random_forest_cluster.pkl"
-    if not os.path.exists(output):
-        gdown.download(url, output, quiet=False)
-
-download_model()
-
 # ثم بعد التنزيل
-model = load("random_forest_cluster.pkl")
+# model = load("random_forest_cluster.pkl")
 
 rf_model, scaler, label_encoders = load_model_and_scaler()
 
