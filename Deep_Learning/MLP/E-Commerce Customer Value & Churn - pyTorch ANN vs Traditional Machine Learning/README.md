@@ -6,12 +6,14 @@ It compares **Traditional Machine Learning** models with a **Deep Learning (PyTo
 
 ## 📂 Project Structure
 
-e_commerce_churn_(pytorch).py # Main code: data prep, models, training & evaluation
 
-data/ # Your dataset (not included in repo due to size)
+|   File  | Description |
+|--------|-------------|
+| **e_commerce_churn_(pytorch).py** | Main code: data prep, models, training & evaluation |
+| **results/** |Saved figures and ONNX model |
+| **README.md** | This file |
 
-README.md # This file
-results/ # Saved figures and ONNX model
+
 
 
 
